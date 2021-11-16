@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonsComponent } from './person/persons.component';
 import { PersonInputComponent } from './person/person-input.component';
+import { PersonService } from './person/persons.service';
 
 @NgModule({
   declarations: [AppComponent,PersonsComponent,PersonInputComponent],

@@ -1,4 +1,5 @@
-import { Component,Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { PersonService } from './persons.service';
 
 @Component({
   selector: 'app-persons',
@@ -6,6 +7,11 @@ import { Component,Input } from '@angular/core';
 })
 
 export class PersonsComponent {
- // Binding the data
-  @Input() personList: string[];
+  personList: string[];
+
+  //Injecting services
+  constructor(personService: PersonService) {
+    this.personList = personService.persons;
+  }
+
 }
