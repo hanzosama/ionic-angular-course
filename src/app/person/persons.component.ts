@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PersonService } from './persons.service';
 
 @Component({
@@ -6,12 +6,18 @@ import { PersonService } from './persons.service';
   templateUrl: './persons.component.html'
 })
 
-export class PersonsComponent {
+export class PersonsComponent implements OnInit {
   personList: string[];
+  private personService: PersonService;
 
   //Injecting services
+  //Using private the effect is the same
   constructor(personService: PersonService) {
-    this.personList = personService.persons;
+    this.personService = personService;
+  }
+
+  ngOnInit(): void {
+    this.personList = this.personService.persons;
   }
 
 }
