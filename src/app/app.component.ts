@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  persons: string[] = ['Alex', 'Max', 'Anna'];
+  constructor() { }
+  onPersonCreated(name: string) {
+    this.persons.push(name);
+  }
 }

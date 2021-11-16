@@ -1,3 +1,2 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<app-person-input (personCreated)="onPersonCreated($event)"></app-person-input>
+<app-persons [personList]="persons"></app-persons>
